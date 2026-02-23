@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HemaLens | Advanced Blood Report Analyzer</title>
+    <meta name="description"
+        content="AI-powered clinical data analysis for your blood reports. Understand your biomarkers with clarity and precision.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="app-container">
+        <header>
+            <nav>
+                <div class="logo">
+                    <span class="logo-icon">🔬</span>
+                    <span class="logo-text">HemaLens</span>
+                </div>
+                <div class="nav-links">
+                    <a href="index.html" class="active">Home</a>
+                    <a href="guide.html">Biomarker Guide</a>
+                    <a href="privacy.html">Privacy</a>
+                </div>
+            </nav>
+        </header>
+
+        <main id="home">
+            <section class="hero">
+                <div class="hero-content">
+                    <h1>Understand Your Health <br><span class="highlight">Beyond the Numbers</span></h1>
+                    <p>HemaLens uses advanced AI to bridge the gap between complex laboratory data and your well-being.
+                        Upload your blood report for a clear, actionable analysis.</p>
+
+                    <div class="upload-container" id="uploadZone">
+                        <div class="upload-box">
+                            <div class="upload-icon">📄</div>
+                            <h3>Upload Blood Report</h3>
+                            <p>Drag and drop your report image (JPG, PNG) or click to browse</p>
+                            <input type="file" id="fileInput" accept="image/*" hidden>
+                            <button class="btn btn-primary" id="uploadBtn">Choose File</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hero-visual">
+                    <div class="floating-card c1">
+                        <div class="card-icon">🩸</div>
+                        <div class="card-info">
+                            <span class="label">Hemoglobin</span>
+                            <span class="value">14.2 g/dL</span>
+                            <span class="status healthy">Normal</span>
+                        </div>
+                    </div>
+                    <div class="floating-card c2">
+                        <div class="card-icon">⚡</div>
+                        <div class="card-info">
+                            <span class="label">Glucose</span>
+                            <span class="value">105 mg/dL</span>
+                            <span class="status warning">Slightly High</span>
+                        </div>
+                    </div>
+                    <div class="blob-bg"></div>
+                </div>
+            </section>
+
+            <section class="results-section hidden" id="resultsSection">
+                <div class="results-header">
+                    <h2>Analysis Report</h2>
+                    <div class="patient-brief">
+                        <span>Report Date: <strong id="reportDate">Feb 23, 2026</strong></span>
+                        <span>Confidence: <strong class="high">High</strong></span>
+                    </div>
+                </div>
+
+                <div class="risk-alert hidden" id="riskAlert">
+                    <div class="alert-icon">🚨</div>
+                    <div class="alert-content">
+                        <h3>Critical Alert</h3>
+                        <p id="alertMessage"></p>
+                    </div>
+                </div>
+
+                <div class="bento-grid">
+                    <div class="bento-item report-table">
+                        <h3>Biomarker Table</h3>
+                        <div class="table-container">
+                            <table id="biomarkerTable">
+                                <thead>
+                                    <tr>
+                                        <th>Parameter</th>
+                                        <th>Result</th>
+                                        <th>Normal Range</th>
+                                        <th>Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <!-- Data will be injected here -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="bento-item docs-note">
+                        <h3>Doctor's Note</h3>
+                        <p id="englishSummary"></p>
+                    </div>
+
+                    <div class="bento-item hindi-summary">
+                        <h3>Hindi Summary (हिंदी सारांश)</h3>
+                        <p id="hindiSummary"></p>
+                    </div>
+
+                    <div class="bento-item actionable-steps">
+                        <h3>Actionable Steps</h3>
+                        <ul id="actionSteps">
+                            <!-- Steps will be injected here -->
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="disclaimer">
+                    <p>🚨 This is an AI analysis for educational purposes. This is NOT a medical diagnosis. Please
+                        consult a registered medical practitioner immediately for health decisions.</p>
+                </div>
+            </section>
+
+        </main>
+
+        <footer>
+            <p>&copy; 2026 HemaLens AI. All rights assigned to educational research.</p>
+        </footer>
+    </div>
+
+    <div class="overlay hidden" id="loadingOverlay">
+        <div class="loader-content">
+            <div class="dna-spinner"></div>
+            <p>Analyzing biomarkers using Gemini 2.5 Flash...</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
