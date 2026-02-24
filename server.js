@@ -23,7 +23,7 @@ app.post('/analyze', upload.single('report'), async (req, res) => {
 
         // Get image data from memory buffer
         const imageData = req.file.buffer;
-        const prompt = "ROLE: Clinical Data Scientist. TASK: Identify biomarkers from this blood report image. OUTPUT: Return ONLY a JSON object with keys: biomarkers (array of {parameter, result, range, status}), docsNote (English simple explanation), hindiSummary (3 sentences Hindi), actionableSteps (3 lifestyle tips), risk (red alert message if life-threatening, else null).";
+        const prompt = "ROLE: Clinical Data Scientist. TASK: Identify biomarkers from this blood report image. OUTPUT: Return ONLY a JSON object with keys: biomarkers (array of {parameter, result, range, status}), docsNote (English simple explanation), hindiSummary (3 sentences Hindi), actionableSteps (3 lifestyle tips), nutritionPlan (3 specific food recommendations based on analysis), risk (red alert message if life-threatening, else null).";
 
         console.log("--- Starting Analysis with Gemini 2.5 Flash ---");
         const result = await model.generateContent([{
